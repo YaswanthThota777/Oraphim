@@ -18,7 +18,10 @@ Installer SHA-256: `92dfea3da541261de74462f3647137c35c958e10d94460309058738c39c0
 - Headless MCP / OpenColorIO smoke passed.
 - Workspace UI Contract, Edit Workspace, and Timeline Preview Policy tests passed.
 - The two previously failing market-gate shards were corrected and passed on the final test binary.
-- Fresh silent installation passed with exit code 0.`r`n- Installed Oraphim remained running for 20 seconds in a normal launch smoke; the prior missing-integrity-manifest startup failure is fixed.`r`n- The release executable is Windows GUI subsystem, so normal Explorer/shortcut launch does not allocate a console window.`r`n- The payload is RSA-PSS-SHA256 integrity sealed; Authenticode signing is not yet available for this beta.
+- Fresh silent installation passed with exit code 0.
+- Installed Oraphim remained running for 20 seconds in a normal launch smoke; the prior missing-integrity-manifest startup failure is fixed.
+- The release executable is Windows GUI subsystem, so normal Explorer/shortcut launch does not allocate a console window.
+- The payload is RSA-PSS-SHA256 integrity sealed; Authenticode signing is not yet available for this beta.
 
 ## System requirements
 
