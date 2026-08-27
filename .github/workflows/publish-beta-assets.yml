@@ -1,0 +1,27 @@
+name: Publish Oraphim beta assets
+on:
+  push:
+    branches: [release-assets-v1.0.0-beta-20260827]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Verify release package
+        shell: bash
+        run: |
+          cd release_payload
+          sha256sum -c Oraphim-1.0.0-beta-Windows-x64.zip.sha256
+          unzip -t Oraphim-1.0.0-beta-Windows-x64.zip
+          test "$(unzip -Z1 Oraphim-1.0.0-beta-Windows-x64.zip | wc -l)" -eq 1
+          unzip -p Oraphim-1.0.0-beta-Windows-x64.zip OraphimSetup.exe > OraphimSetup.exe
+          test -s OraphimSetup.exe
+      - name: Replace beta release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload v1.0.0-beta release_payload/Oraphim-1.0.0-beta-Windows-x64.zip release_payload/Oraphim-1.0.0-beta-Windows-x64.zip.sha256 release_payload/OraphimSetup.exe --repo "$GITHUB_REPOSITORY" --clobber
