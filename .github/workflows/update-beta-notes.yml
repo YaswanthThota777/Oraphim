@@ -1,0 +1,15 @@
+name: Update Oraphim beta notes
+on:
+  push:
+    branches: [release-assets-v1.0.0-beta-20260827]
+permissions:
+  contents: write
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release edit v1.0.0-beta --repo "$GITHUB_REPOSITORY" --notes-file release-notes.md
