@@ -1,5 +1,7 @@
 name: Publish Oraphim beta assets
 on:
+  push:
+    branches: [release-assets-v1.0.0-beta-20260827]
   workflow_dispatch:
 permissions:
   contents: write

@@ -7,16 +7,18 @@ Professional video editing, motion graphics, compositing, color, and procedural 
 Download `Oraphim-1.0.0-beta-Windows-x64.zip`.
 The ZIP contains exactly one file: `OraphimSetup.exe`.
 
-ZIP SHA-256: `7d9773d01dd1030aac8bb5264ae6fc72443aa36716522d70b956ca08388555f1`
+ZIP SHA-256: `bc4a268937a59b653ce7b55f3d8d971653de9d416dfa1de9254898885612bdb9`
 
-Installer SHA-256: `92dfea3da541261de74462f3647137c35c958e10d94460309058738c39c081e0`
+Installer SHA-256: `9a9db7e1e1cc3189d733669ae63d35fb01a210bc0d52b08a3e6ef32d926f9026`
 
 ## Release certification
 
 - Fresh Windows x64 Release build passed.
 - Portable runtime validation passed for 517 staged files.
 - Headless MCP / OpenColorIO smoke passed.
-- Workspace UI Contract, Edit Workspace, and Timeline Preview Policy tests passed.
+- Final studio-path certification passed 11/11 focused tests across Edit, Composition, Motion Graph/VFX, Color, timeline preview invalidation, rendering diagnostics, and performance.
+- Imported still-image -> V1 clip -> timeline -> MP4 render was verified headlessly with decoded source-color quadrant preservation.
+- Color Node Graph drag ownership now prevents node drags from activating marquee/multi-selection; media drag feedback is compact.
 - The two previously failing market-gate shards were corrected and passed on the final test binary.
 - Fresh silent installation passed with exit code 0.
 - Installed Oraphim remained running for 20 seconds in a normal launch smoke; the prior missing-integrity-manifest startup failure is fixed.
